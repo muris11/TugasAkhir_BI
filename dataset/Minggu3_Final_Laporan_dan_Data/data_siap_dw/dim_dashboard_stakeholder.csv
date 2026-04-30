@@ -1,0 +1,7 @@
+key_dashboard,jenis_dashboard,pengguna_utama,level_keputusan,kebutuhan_informasi,keputusan_yang_didukung
+D001,Strategic Dashboard,Gubernur/Pimpinan Pemprov Jabar; Bappeda Jawa Barat,Strategic,"KPI utama, ranking wilayah, tren tahunan, peta prioritas",Kebijakan dan prioritas intervensi antarwilayah
+D002,Tactical Dashboard,Disnakertrans; Dinas Sosial; OPD ekonomi dan sosial,Tactical,"Drill-down per indikator, top-bottom daerah, perubahan tahunan",Monitoring program dan alokasi intervensi
+D003,Managerial Dashboard,Pemerintah Kabupaten/Kota; Kepala bidang/manajer program,Managerial,"Profil wilayah, gap indikator, evaluasi capaian per tahun",Tindak lanjut lokal dan evaluasi kinerja daerah
+D004,Operational Dashboard,Operator/Admin Data,Operational,"Kelengkapan data, status missing value, konsistensi update",Menjaga kualitas dan kesiapan data
+D005,Analytical Dashboard,Tim BI/Data Analyst,Analytical,"Korelasi, clustering, anomaly, ranking prioritas",Pendalaman analisis dan model lanjutan
+D006,Public Dashboard,"Publik, akademisi, media",Public,"Tren ringkas, profil wilayah, transparansi indikator",Komunikasi dan akuntabilitas publik

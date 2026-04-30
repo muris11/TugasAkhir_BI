@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --accent: #0052ff;
+  --accent-secondary: #4d7cff;
+  --accent-foreground: #ffffff;
+  --ring: #0052ff;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 20px 35px rgba(15, 23, 42, 0.1);
+  --shadow-accent: 0 4px 14px rgba(0, 82, 255, 0.25);
+  --shadow-accent-lg: 0 8px 24px rgba(0, 82, 255, 0.35);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-calistoga), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+::selection {
+  background: rgba(0, 82, 255, 0.18);
+  color: var(--foreground);
+}
+
+/* === Utilities === */
+
+.font-display {
+  font-family: var(--font-calistoga), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+.font-mono-ui {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, var(--accent), var(--accent-secondary));
+}
+
+.gradient-bg-diag {
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+}
+
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dot-pattern-light {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.radial-glow-accent {
+  background: radial-gradient(circle at center, rgba(0, 82, 255, 0.18), transparent 70%);
+  filter: blur(80px);
+}
+
+.shadow-card { box-shadow: var(--shadow-md); }
+.shadow-card-lg { box-shadow: var(--shadow-lg); }
+.shadow-card-xl { box-shadow: var(--shadow-xl); }
+.shadow-accent-tint { box-shadow: var(--shadow-accent); }
+.shadow-accent-tint-lg { box-shadow: var(--shadow-accent-lg); }
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--accent);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.65; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+.animate-float-y { animation: float-y 5s ease-in-out infinite; }
+.animate-float-y-slow { animation: float-y 7s ease-in-out infinite; }
+.animate-rotate-slow { animation: rotate-slow 60s linear infinite; }
+.animate-rotate-slower { animation: rotate-slow 120s linear infinite reverse; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-dot,
+  .animate-float-y,
+  .animate-float-y-slow,
+  .animate-rotate-slow,
+  .animate-rotate-slower { animation: none; }
+}
+
+.dash-scroll::-webkit-scrollbar { height: 7px; width: 7px; }
+.dash-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 999px;
+}
+.dash-scroll::-webkit-scrollbar-track { background: transparent; }

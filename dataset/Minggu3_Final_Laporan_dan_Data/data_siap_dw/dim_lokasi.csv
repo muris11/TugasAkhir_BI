@@ -1,0 +1,28 @@
+key_lokasi,nama_wilayah,jenis_wilayah,level_wilayah
+L001,Kabupaten Bandung,Kabupaten,Kabupaten/Kota
+L002,Kabupaten Bandung Barat,Kabupaten,Kabupaten/Kota
+L003,Kabupaten Bekasi,Kabupaten,Kabupaten/Kota
+L004,Kabupaten Bogor,Kabupaten,Kabupaten/Kota
+L005,Kabupaten Ciamis,Kabupaten,Kabupaten/Kota
+L006,Kabupaten Cianjur,Kabupaten,Kabupaten/Kota
+L007,Kabupaten Cirebon,Kabupaten,Kabupaten/Kota
+L008,Kabupaten Garut,Kabupaten,Kabupaten/Kota
+L009,Kabupaten Indramayu,Kabupaten,Kabupaten/Kota
+L010,Kabupaten Karawang,Kabupaten,Kabupaten/Kota
+L011,Kabupaten Kuningan,Kabupaten,Kabupaten/Kota
+L012,Kabupaten Majalengka,Kabupaten,Kabupaten/Kota
+L013,Kabupaten Pangandaran,Kabupaten,Kabupaten/Kota
+L014,Kabupaten Purwakarta,Kabupaten,Kabupaten/Kota
+L015,Kabupaten Subang,Kabupaten,Kabupaten/Kota
+L016,Kabupaten Sukabumi,Kabupaten,Kabupaten/Kota
+L017,Kabupaten Sumedang,Kabupaten,Kabupaten/Kota
+L018,Kabupaten Tasikmalaya,Kabupaten,Kabupaten/Kota
+L019,Kota Bandung,Kota,Kabupaten/Kota
+L020,Kota Banjar,Kota,Kabupaten/Kota
+L021,Kota Bekasi,Kota,Kabupaten/Kota
+L022,Kota Bogor,Kota,Kabupaten/Kota
+L023,Kota Cimahi,Kota,Kabupaten/Kota
+L024,Kota Cirebon,Kota,Kabupaten/Kota
+L025,Kota Depok,Kota,Kabupaten/Kota
+L026,Kota Sukabumi,Kota,Kabupaten/Kota
+L027,Kota Tasikmalaya,Kota,Kabupaten/Kota

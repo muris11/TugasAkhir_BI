@@ -1,0 +1,7 @@
+indikator,bobot,makna_prioritas
+norm_tpt,0.2,TPT tinggi = prioritas lebih tinggi
+norm_kemiskinan,0.25,Kemiskinan tinggi = prioritas lebih tinggi
+norm_gini,0.1,Ketimpangan tinggi = prioritas lebih tinggi
+norm_low_edu,0.2,Pendidikan lebih rendah = prioritas lebih tinggi
+norm_low_ipg,0.1,IPG lebih rendah = prioritas lebih tinggi
+norm_rentan,0.15,Gabungan TPT+kemiskinan tinggi = prioritas lebih tinggi

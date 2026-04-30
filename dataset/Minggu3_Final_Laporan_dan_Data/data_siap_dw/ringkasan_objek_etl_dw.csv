@@ -1,0 +1,10 @@
+nama_objek,jenis_objek,jumlah_baris,jumlah_kolom,grain
+dim_lokasi,Dimension,27,4,1 baris = 1 wilayah kabupaten/kota
+dim_waktu_tahunan,Dimension,5,3,1 baris = 1 tahun
+dim_waktu_bulanan,Dimension,60,8,1 baris = 1 bulan dalam satu tahun
+dim_dashboard_stakeholder,Dimension,6,6,1 baris = 1 jenis dashboard/stakeholder
+fact_kinerja_ekonomi_tahunan,Fact,135,15,1 baris = 1 wilayah x 1 tahun
+fact_inflasi_bulanan,Fact,1620,6,1 baris = 1 wilayah x 1 bulan x 1 tahun
+mart_kinerja_ekonomi_tahunan,Data Mart,135,16,fact tahunan + dim lokasi + dim tahun
+mart_inflasi_bulanan,Data Mart,1620,10,fact inflasi + dim lokasi + dim bulan
+data_ready_analisis_2024,Analytical Dataset,27,12,1 baris = 1 wilayah tahun 2024

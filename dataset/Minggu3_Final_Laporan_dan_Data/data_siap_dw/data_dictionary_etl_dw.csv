@@ -1,0 +1,81 @@
+nama_objek,kolom,tipe_data,jumlah_non_null,contoh_nilai
+dim_lokasi,key_lokasi,object,27,L001
+dim_lokasi,nama_wilayah,object,27,Kabupaten Bandung
+dim_lokasi,jenis_wilayah,object,27,Kabupaten
+dim_lokasi,level_wilayah,object,27,Kabupaten/Kota
+dim_waktu_tahunan,key_waktu_tahun,object,5,Y2021
+dim_waktu_tahunan,tahun,int64,5,2021
+dim_waktu_tahunan,periode_label,object,5,2021
+dim_waktu_bulanan,key_waktu_bulan,object,60,M202101
+dim_waktu_bulanan,tahun,int64,60,2021
+dim_waktu_bulanan,bulan,object,60,Januari
+dim_waktu_bulanan,bulan_ke,int64,60,1
+dim_waktu_bulanan,periode_label,object,60,Januari 2021
+dim_waktu_bulanan,is_bulan_awal_tahun,int64,60,1
+dim_waktu_bulanan,is_bulan_tengah_tahun,int64,60,0
+dim_waktu_bulanan,is_bulan_akhir_tahun,int64,60,0
+dim_dashboard_stakeholder,key_dashboard,object,6,D001
+dim_dashboard_stakeholder,jenis_dashboard,object,6,Strategic Dashboard
+dim_dashboard_stakeholder,pengguna_utama,object,6,Gubernur/Pimpinan Pemprov Jabar; Bappeda Jawa Barat
+dim_dashboard_stakeholder,level_keputusan,object,6,Strategic
+dim_dashboard_stakeholder,kebutuhan_informasi,object,6,"KPI utama, ranking wilayah, tren tahunan, peta prioritas"
+dim_dashboard_stakeholder,keputusan_yang_didukung,object,6,Kebijakan dan prioritas intervensi antarwilayah
+fact_kinerja_ekonomi_tahunan,id_fact_kinerja,object,135,FK0001
+fact_kinerja_ekonomi_tahunan,key_lokasi,object,135,L001
+fact_kinerja_ekonomi_tahunan,key_waktu_tahun,object,135,Y2021
+fact_kinerja_ekonomi_tahunan,tpt,float64,108,8.32
+fact_kinerja_ekonomi_tahunan,persentase_penduduk_miskin,float64,135,7.15
+fact_kinerja_ekonomi_tahunan,gini_ratio,float64,135,0.386
+fact_kinerja_ekonomi_tahunan,ipg,float64,135,94.59
+fact_kinerja_ekonomi_tahunan,rls,float64,135,9.07
+fact_kinerja_ekonomi_tahunan,hls,float64,135,12.7
+fact_kinerja_ekonomi_tahunan,pendidikan_indeks_sederhana,float64,135,10.885
+fact_kinerja_ekonomi_tahunan,kemiskinan_pengangguran_index,float64,108,15.47
+fact_kinerja_ekonomi_tahunan,gender_pendidikan_index,float64,135,52.7375
+fact_kinerja_ekonomi_tahunan,status_tpt,object,135,tersedia
+fact_kinerja_ekonomi_tahunan,status_indeks_kerentanan,object,135,tersedia
+fact_kinerja_ekonomi_tahunan,keterangan_etl,object,135,OK
+fact_inflasi_bulanan,id_fact_inflasi,object,1620,FI00001
+fact_inflasi_bulanan,key_lokasi,object,1620,L001
+fact_inflasi_bulanan,key_waktu_bulan,object,1620,M202101
+fact_inflasi_bulanan,inflasi_yoy,float64,110,-0.45
+fact_inflasi_bulanan,status_inflasi,object,1620,belum_tersedia
+fact_inflasi_bulanan,keterangan_etl,object,1620,Inflasi belum tersedia pada kombinasi wilayah-bulan; tidak diimputasi
+mart_kinerja_ekonomi_tahunan,id_fact_kinerja,object,135,FK0001
+mart_kinerja_ekonomi_tahunan,nama_wilayah,object,135,Kabupaten Bandung
+mart_kinerja_ekonomi_tahunan,jenis_wilayah,object,135,Kabupaten
+mart_kinerja_ekonomi_tahunan,tahun,int64,135,2021
+mart_kinerja_ekonomi_tahunan,tpt,float64,108,8.32
+mart_kinerja_ekonomi_tahunan,persentase_penduduk_miskin,float64,135,7.15
+mart_kinerja_ekonomi_tahunan,gini_ratio,float64,135,0.386
+mart_kinerja_ekonomi_tahunan,ipg,float64,135,94.59
+mart_kinerja_ekonomi_tahunan,rls,float64,135,9.07
+mart_kinerja_ekonomi_tahunan,hls,float64,135,12.7
+mart_kinerja_ekonomi_tahunan,pendidikan_indeks_sederhana,float64,135,10.885
+mart_kinerja_ekonomi_tahunan,kemiskinan_pengangguran_index,float64,108,15.47
+mart_kinerja_ekonomi_tahunan,gender_pendidikan_index,float64,135,52.7375
+mart_kinerja_ekonomi_tahunan,status_tpt,object,135,tersedia
+mart_kinerja_ekonomi_tahunan,status_indeks_kerentanan,object,135,tersedia
+mart_kinerja_ekonomi_tahunan,keterangan_etl,object,135,OK
+mart_inflasi_bulanan,id_fact_inflasi,object,1620,FI00001
+mart_inflasi_bulanan,nama_wilayah,object,1620,Kabupaten Bandung
+mart_inflasi_bulanan,jenis_wilayah,object,1620,Kabupaten
+mart_inflasi_bulanan,tahun,int64,1620,2021
+mart_inflasi_bulanan,bulan,object,1620,Januari
+mart_inflasi_bulanan,bulan_ke,int64,1620,1
+mart_inflasi_bulanan,periode_label,object,1620,Januari 2021
+mart_inflasi_bulanan,inflasi_yoy,float64,110,-0.45
+mart_inflasi_bulanan,status_inflasi,object,1620,belum_tersedia
+mart_inflasi_bulanan,keterangan_etl,object,1620,Inflasi belum tersedia pada kombinasi wilayah-bulan; tidak diimputasi
+data_ready_analisis_2024,nama_wilayah,object,27,Kabupaten Bandung
+data_ready_analisis_2024,jenis_wilayah,object,27,Kabupaten
+data_ready_analisis_2024,tahun,int64,27,2024
+data_ready_analisis_2024,tpt,float64,27,6.36
+data_ready_analisis_2024,persentase_penduduk_miskin,float64,27,6.19
+data_ready_analisis_2024,gini_ratio,float64,27,0.364
+data_ready_analisis_2024,ipg,float64,27,95.1
+data_ready_analisis_2024,rls,float64,27,9.15
+data_ready_analisis_2024,hls,float64,27,12.74
+data_ready_analisis_2024,pendidikan_indeks_sederhana,float64,27,10.945
+data_ready_analisis_2024,kemiskinan_pengangguran_index,float64,27,12.55
+data_ready_analisis_2024,gender_pendidikan_index,float64,27,53.0225
