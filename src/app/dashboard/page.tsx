@@ -29,7 +29,8 @@ import Link from "next/link";
 export default async function DashboardHomePage() {
   const data = await getDashboardData();
   const latest2025 = getLatestKinerjaByWilayah(data.kinerja).filter((row) => row.tahun === 2025);
-  const latest2024 = getLatestKinerjaByWilayah(data.kinerja).filter((row) => row.tahun === 2024);
+  const kinerja2024 = data.kinerja.filter((row) => row.tahun === 2024);
+  const latest2024 = getLatestKinerjaByWilayah(data.kinerja.filter((row) => row.tahun <= 2024)).filter((row) => row.tahun === 2024);
   const quality = getDataQualitySummary(data.kinerja, data.inflasi);
   const topPriority = getTopPriority(data.clusterPriority, 10);
 
@@ -56,7 +57,7 @@ export default async function DashboardHomePage() {
   const prevGini = avg(latest2024.map((r) => r.gini_ratio));
   const prevIpg = avg(latest2024.map((r) => r.ipg));
 
-  const scatterData = latest2024.map((row) => {
+  const scatterData = kinerja2024.map((row) => {
     const cluster = data.clusterPriority.find((c) => c.nama_wilayah === row.nama_wilayah);
     return {
       nama: row.nama_wilayah,

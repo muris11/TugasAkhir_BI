@@ -58,9 +58,9 @@ export function StatsStrip({
         >
           {items.map((item) => (
             <motion.div key={item.label} variants={fadeInUp} className="md:border-l md:border-white/10 md:pl-6 first:border-l-0 first:pl-0">
-              <p className="font-display text-4xl text-white md:text-5xl">{item.value}</p>
-              <p className="mt-2 font-mono-ui text-[10px] uppercase tracking-[0.2em] text-white/60">{item.label}</p>
-              <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+              <p className="font-display text-5xl text-white md:text-6xl">{item.value}</p>
+              <p className="mt-3 font-mono-ui text-xs uppercase tracking-[0.15em] text-white/60">{item.label}</p>
+              <p className="mt-2 text-base text-white/70">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -91,7 +91,7 @@ export function IndicatorsSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="font-display mt-5 max-w-3xl text-3xl leading-tight text-foreground md:text-[2.75rem]"
+        className="font-display mt-5 max-w-3xl text-4xl leading-tight text-foreground md:text-[3rem]"
       >
         Enam indikator inti yang membentuk <GradientText>peta sosial-ekonomi</GradientText> Jabar.
       </motion.h2>
@@ -100,7 +100,7 @@ export function IndicatorsSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="mt-4 max-w-2xl text-base text-muted-foreground"
+        className="mt-4 max-w-2xl text-lg text-muted-foreground md:text-xl"
       >
         Setiap indikator dihubungkan ke KPI dan business question agar dashboard tidak berhenti di
         visualisasi—tapi mengarah ke keputusan.
@@ -122,11 +122,11 @@ export function IndicatorsSection() {
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-lg"
             >
               <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-accent/4 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl gradient-bg shadow-accent-tint">
-                <Icon className="h-5 w-5 text-white" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl gradient-bg shadow-accent-tint">
+                <Icon className="h-6 w-6 text-white" />
               </div>
-              <h3 className="font-display mt-4 text-xl text-foreground">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              <h3 className="font-display mt-4 text-2xl text-foreground">{item.title}</h3>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">{item.desc}</p>
             </motion.article>
           );
         })}
@@ -172,7 +172,7 @@ export function BusinessQuestionSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="font-display mt-5 max-w-3xl text-3xl leading-tight text-foreground md:text-[2.75rem]"
+        className="font-display mt-5 max-w-3xl text-4xl leading-tight text-foreground md:text-[3rem]"
       >
         Tiga pertanyaan inti yang <GradientText>dijawab oleh data</GradientText>.
       </motion.h2>
@@ -191,13 +191,13 @@ export function BusinessQuestionSection() {
               className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-lg"
             >
               <div>
-                <p className="font-mono-ui text-[10px] uppercase tracking-[0.22em] text-accent">{q.no}</p>
-                <p className="font-display mt-3 text-xl leading-snug text-foreground">{q.text}</p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.answer}</p>
+                <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-accent font-medium">{q.no}</p>
+                <p className="font-display mt-3 text-2xl leading-snug text-foreground">{q.text}</p>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">{q.answer}</p>
               </div>
-              <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent">
+              <div className="mt-6 inline-flex items-center gap-1 text-base font-medium text-accent">
                 {q.cta}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </div>
             </Link>
           </motion.div>
@@ -220,7 +220,7 @@ export function PipelineSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="font-display mt-5 max-w-3xl text-3xl leading-tight text-foreground md:text-[2.75rem]"
+        className="font-display mt-5 max-w-3xl text-4xl leading-tight text-foreground md:text-[3rem]"
       >
         Dari data mentah ke <GradientText>keputusan publik</GradientText>—dalam 8 langkah terhubung.
       </motion.h2>
@@ -229,7 +229,7 @@ export function PipelineSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="mt-4 max-w-2xl text-base text-muted-foreground"
+        className="mt-4 max-w-2xl text-lg text-muted-foreground"
       >
         Klik tiap langkah untuk melihat aktivitas, output, dan rumus matematika yang dipakai.
       </motion.p>
@@ -251,10 +251,10 @@ export function PipelineSection() {
       <div className="mt-10 flex justify-center">
         <Link
           href="/metodologi"
-          className="group inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-muted hover:border-accent/30"
+          className="group inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-base font-medium text-foreground transition-all duration-200 hover:bg-muted hover:border-accent/30"
         >
           Baca metodologi lengkap dengan rumus
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
     </section>
@@ -352,28 +352,28 @@ function PipelineAccordionItem({
           </div>
 
           <aside className="space-y-4">
-            <div className="rounded-xl border border-border bg-muted/40 p-4">
-              <p className="font-mono-ui text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Output / Deliverables</p>
-              <ul className="mt-2 space-y-1">
+            <div className="rounded-xl border border-border bg-muted/40 p-5">
+              <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-muted-foreground font-medium">Output / Deliverables</p>
+              <ul className="mt-3 space-y-2">
                 {step.output.map((o) => (
-                  <li key={o} className="flex items-start gap-2 text-xs text-foreground">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  <li key={o} className="flex items-start gap-2 text-sm text-foreground">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>{o}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-border bg-muted/40 p-4">
-              <p className="font-mono-ui text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Tools & library</p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
+            <div className="rounded-xl border border-border bg-muted/40 p-5">
+              <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-muted-foreground font-medium">Tools & library</p>
+              <div className="mt-3 flex flex-wrap gap-2">
                 {step.tools.map((t) => (
-                  <span key={t} className="rounded-md bg-card px-2 py-1 font-mono-ui text-[10px] text-foreground">{t}</span>
+                  <span key={t} className="rounded-md bg-card px-2.5 py-1.5 font-mono-ui text-xs text-foreground">{t}</span>
                 ))}
               </div>
             </div>
-            <div className="rounded-xl border border-accent/20 bg-accent/5 p-4">
-              <p className="font-mono-ui text-[10px] uppercase tracking-[0.18em] text-accent">Referensi</p>
-              <p className="mt-1.5 text-xs text-foreground">{step.referensi}</p>
+            <div className="rounded-xl border border-accent/20 bg-accent/5 p-5">
+              <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-accent font-medium">Referensi</p>
+              <p className="mt-2 text-sm text-foreground">{step.referensi}</p>
             </div>
           </aside>
         </div>
@@ -462,7 +462,7 @@ export function StakeholderSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="font-display mt-5 max-w-3xl text-3xl leading-tight text-foreground md:text-[2.75rem]"
+        className="font-display mt-5 max-w-3xl text-4xl leading-tight text-foreground md:text-[3rem]"
       >
         Enam dashboard, enam <GradientText>level keputusan</GradientText>—untuk siapa?
       </motion.h2>
@@ -471,7 +471,7 @@ export function StakeholderSection() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={fadeInUp}
-        className="mt-4 max-w-2xl text-base text-muted-foreground"
+        className="mt-4 max-w-2xl text-lg text-muted-foreground"
       >
         Tiap stakeholder dipisah ke halaman tersendiri sesuai tingkat keputusan dan audiens institusionalnya—
         bukan menumpuk semua KPI di satu dashboard generik.
@@ -493,28 +493,28 @@ export function StakeholderSection() {
                 className="group flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-lg"
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl gradient-bg shadow-accent-tint">
-                    <Icon className="h-5 w-5 text-white" />
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl gradient-bg shadow-accent-tint">
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <span className="rounded-full border border-accent/20 bg-accent/5 px-2.5 py-1 font-mono-ui text-[9px] uppercase tracking-[0.18em] text-accent">
+                  <span className="rounded-full border border-accent/20 bg-accent/5 px-3 py-1.5 font-mono-ui text-xs uppercase tracking-[0.15em] text-accent font-medium">
                     {s.level}
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-display text-2xl text-foreground">{s.title}</h3>
-                  <p className="mt-1 flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-                    <Users className="h-3 w-3" /> Untuk:
+                  <h3 className="font-display text-3xl text-foreground">{s.title}</h3>
+                  <p className="mt-2 flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                    <Users className="h-4 w-4" /> Untuk:
                   </p>
-                  <p className="mt-1 text-sm font-medium text-foreground">{s.primary}</p>
-                  <div className="mt-3 flex flex-wrap gap-1">
+                  <p className="mt-1 text-base font-medium text-foreground">{s.primary}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
                     {s.secondary.slice(0, 3).map((sec) => (
-                      <span key={sec} className="rounded-md bg-muted px-2 py-0.5 font-mono-ui text-[10px] text-muted-foreground">
+                      <span key={sec} className="rounded-md bg-muted px-2.5 py-1 font-mono-ui text-xs text-muted-foreground">
                         {sec}
                       </span>
                     ))}
                   </div>
                 </div>
-                <p className="mt-auto rounded-lg border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">
+                <p className="mt-auto rounded-lg border border-border bg-muted/40 p-4 text-sm leading-relaxed text-muted-foreground">
                   <span className="font-medium text-foreground">Contoh keputusan:</span> {s.example}
                 </p>
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-accent">
@@ -546,16 +546,16 @@ export function InsightTeaserSection({
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-4 py-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-white" />
-            <span className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-white">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-5 py-2">
+            <span className="h-2 w-2 animate-pulse-dot rounded-full bg-white" />
+            <span className="font-mono-ui text-xs uppercase tracking-[0.15em] text-white font-medium">
               Insight teratas
             </span>
           </div>
-          <h2 className="font-display mt-5 max-w-2xl text-3xl leading-tight text-white md:text-[2.5rem]">
+          <h2 className="font-display mt-5 max-w-2xl text-4xl leading-tight text-white md:text-[2.8rem]">
             Tiga wilayah dengan skor prioritas tertinggi
           </h2>
-          <p className="mt-3 max-w-xl text-sm text-white/70 md:text-base">
+          <p className="mt-4 max-w-xl text-base text-white/70 md:text-lg">
             Hasil K-Means clustering + priority score komposit (TPT, kemiskinan, gini, kerentanan).
             Wilayah-wilayah ini disarankan jadi fokus paket intervensi terpadu.
           </p>
@@ -572,17 +572,17 @@ export function InsightTeaserSection({
             <motion.div
               key={p.nama}
               variants={fadeInUp}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+              className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm"
             >
               <div className="flex items-baseline justify-between">
-                <span className="font-display text-5xl text-white">#{p.rank}</span>
-                <span className="rounded-full border border-white/20 px-2 py-0.5 text-[10px] font-mono-ui uppercase tracking-[0.18em] text-white/70">
+                <span className="font-display text-6xl text-white">#{p.rank}</span>
+                <span className="rounded-full border border-white/20 px-3 py-1 text-xs font-mono-ui uppercase tracking-[0.15em] text-white/70 font-medium">
                   {p.cluster}
                 </span>
               </div>
-              <p className="font-display mt-4 text-xl text-white">{p.nama}</p>
-              <p className="mt-1 text-xs text-white/60">Skor prioritas</p>
-              <p className="mt-1 font-display text-2xl text-white">
+              <p className="font-display mt-4 text-2xl text-white">{p.nama}</p>
+              <p className="mt-2 text-sm text-white/60">Skor prioritas</p>
+              <p className="mt-1 font-display text-3xl text-white">
                 <GradientText>{p.score}</GradientText>
               </p>
             </motion.div>
@@ -598,10 +598,10 @@ export function InsightTeaserSection({
         >
           <Link
             href="/stakeholder/strategic"
-            className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-lg"
+            className="group inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-lg"
           >
             Lihat semua prioritas wilayah
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </InvertedSection>
@@ -624,30 +624,30 @@ export function MethodologyTeaserSection() {
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={fadeInUp}>
           <SectionLabel>Metodologi</SectionLabel>
-          <h2 className="font-display mt-5 text-3xl leading-tight text-foreground md:text-[2.5rem]">
+          <h2 className="font-display mt-5 text-4xl leading-tight text-foreground md:text-[3rem]">
             Tidak ada dashboard tanpa <GradientText>analisis data</GradientText>.
           </h2>
-          <p className="mt-4 max-w-xl text-base text-muted-foreground">
+          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
             Semua visualisasi di sini adalah representasi hasil analisis—bukan dashboard kosong.
             Setiap chart dibangun dari pipeline ETL yang bisa direplikasi.
           </p>
           <ul className="mt-8 space-y-3">
             {points.map((p, i) => (
               <li key={p} className="flex items-start gap-3">
-                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 font-mono-ui text-[10px] font-semibold text-accent">
+                <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 font-mono-ui text-xs font-semibold text-accent">
                   {i + 1}
                 </span>
-                <span className="text-sm leading-relaxed text-foreground">{p}</span>
+                <span className="text-base leading-relaxed text-foreground">{p}</span>
               </li>
             ))}
           </ul>
           <div className="mt-8">
             <Link
               href="/metodologi"
-              className="group inline-flex items-center gap-2 rounded-xl border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-muted hover:border-accent/30"
+              className="group inline-flex items-center gap-2 rounded-xl border border-border bg-transparent px-6 py-3 text-base font-medium text-foreground transition-all duration-200 hover:bg-muted hover:border-accent/30"
             >
               Baca metodologi lengkap
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </motion.div>
@@ -657,13 +657,13 @@ export function MethodologyTeaserSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={viewportOnce}
-          className="relative overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl border border-border bg-card p-8 shadow-card-lg"
+          className="relative overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl border border-border bg-card p-10 shadow-card-lg"
         >
           <div aria-hidden className="pointer-events-none absolute inset-0 dot-pattern-light opacity-60" />
           <div className="relative">
-            <Network className="h-8 w-8 text-accent" />
-            <p className="font-display mt-4 text-2xl text-foreground">Star schema BI Jabar</p>
-            <div className="mt-6 space-y-2">
+            <Network className="h-10 w-10 text-accent" />
+            <p className="font-display mt-5 text-3xl text-foreground">Star schema BI Jabar</p>
+            <div className="mt-6 space-y-3">
               {[
                 { label: "fact_kinerja_ekonomi_tahunan", type: "FACT" },
                 { label: "fact_inflasi_bulanan", type: "FACT" },
@@ -673,10 +673,10 @@ export function MethodologyTeaserSection() {
                 { label: "dim_dashboard_stakeholder", type: "DIM" },
               ].map((t) => (
                 <div key={t.label} className="flex items-center gap-2">
-                  <span className={`font-mono-ui text-[9px] uppercase tracking-[0.18em] ${t.type === "FACT" ? "text-accent" : "text-muted-foreground"}`}>
+                  <span className={`font-mono-ui text-xs uppercase tracking-[0.15em] font-medium ${t.type === "FACT" ? "text-accent" : "text-muted-foreground"}`}>
                     {t.type}
                   </span>
-                  <span className="text-xs text-foreground">{t.label}</span>
+                  <span className="text-sm text-foreground">{t.label}</span>
                 </div>
               ))}
             </div>
@@ -700,31 +700,31 @@ export function FinalCTASection() {
           viewport={viewportOnce}
           className="relative max-w-3xl"
         >
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-4 py-1.5">
-            <Globe2 className="h-3.5 w-3.5 text-white" />
-            <span className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-white">Ready to explore</span>
+          <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-5 py-2">
+            <Globe2 className="h-4 w-4 text-white" />
+            <span className="font-mono-ui text-xs uppercase tracking-[0.15em] text-white font-medium">Ready to explore</span>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="font-display mt-5 text-3xl leading-tight text-white md:text-[3rem]"
+            className="font-display mt-5 text-4xl leading-tight text-white md:text-[3.2rem]"
           >
             Buka dashboard. Mulai eksplorasi data Jabar <GradientText>sekarang</GradientText>.
           </motion.h2>
-          <motion.p variants={fadeInUp} className="mt-4 text-sm text-white/70 md:text-base">
+          <motion.p variants={fadeInUp} className="mt-4 text-base text-white/70 md:text-lg">
             Akses 9 halaman, 15+ visualisasi, filter interaktif, dan rekomendasi berbasis data—
             siap dipakai untuk pengambilan keputusan publik.
           </motion.p>
           <motion.div variants={fadeInUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/dashboard"
-              className="group inline-flex h-13 items-center justify-center gap-2 rounded-xl bg-white px-7 text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-xl"
+              className="group inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-white px-8 text-base font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-xl"
             >
               Buka Dashboard
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/stakeholder/public"
-              className="group inline-flex h-13 items-center justify-center gap-2 rounded-xl border border-white/20 bg-transparent px-7 text-sm font-medium text-white transition-all duration-200 hover:bg-white/10"
+              className="group inline-flex h-14 items-center justify-center gap-2 rounded-xl border border-white/20 bg-transparent px-8 text-base font-medium text-white transition-all duration-200 hover:bg-white/10"
             >
               Versi publik
             </Link>
@@ -740,13 +740,13 @@ export function LandingFooter() {
     <footer className="border-t border-border bg-card/40">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
-          <p className="font-display text-lg text-foreground">BI Jabar</p>
-          <p className="mt-1 text-xs text-muted-foreground">Smart Province Analytics · Kelompok 3 D4 SIKC 3B</p>
-          <p className="mt-2 text-xs text-muted-foreground">Tugas Besar Business Intelligence · Semester Genap 2025/2026</p>
+          <p className="font-display text-2xl text-foreground">BI Jabar</p>
+          <p className="mt-2 text-sm text-muted-foreground">Smart Province Analytics · Kelompok 3 D4 SIKC 3B</p>
+          <p className="mt-2 text-sm text-muted-foreground">Tugas Besar Business Intelligence · Semester Genap 2025/2026</p>
         </div>
         <div>
-          <p className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Halaman</p>
-          <ul className="mt-3 space-y-1.5 text-sm">
+          <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-muted-foreground font-medium">Halaman</p>
+          <ul className="mt-3 space-y-2 text-base">
             <li><Link href="/dashboard" className="text-foreground hover:text-accent">Dashboard</Link></li>
             <li><Link href="/metodologi" className="text-foreground hover:text-accent">Metodologi</Link></li>
             <li><Link href="/data-quality" className="text-foreground hover:text-accent">Data Quality</Link></li>
@@ -754,8 +754,8 @@ export function LandingFooter() {
           </ul>
         </div>
         <div>
-          <p className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Sumber data</p>
-          <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+          <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-muted-foreground font-medium">Sumber data</p>
+          <ul className="mt-3 space-y-2 text-base text-muted-foreground">
             <li>BPS Jawa Barat</li>
             <li>Open Data Jabar</li>
             <li>Bank Indonesia</li>
@@ -763,7 +763,7 @@ export function LandingFooter() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 text-xs text-muted-foreground sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
           <span>© 2026 BI Jabar — Kelompok 3</span>
           <span>Built with Next.js + Recharts + Framer Motion</span>
         </div>

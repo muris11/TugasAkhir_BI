@@ -152,6 +152,21 @@ export function KPITrendLine({
 
 /* ------------------- 2. RANKING BAR (horizontal) ------------------- */
 
+const namedColors: Record<string, string> = {
+  rose: chartPalette.rose,
+  emerald: chartPalette.emerald,
+  amber: chartPalette.amber,
+  violet: chartPalette.violet,
+  cyan: chartPalette.cyan,
+  accent: chartPalette.accent,
+  slate: chartPalette.slate,
+};
+
+function resolveColor(color: string): string {
+  if (color === "gradient") return "url(#barGrad)";
+  return namedColors[color] ?? color;
+}
+
 export function RankingBar({
   data,
   xKey,
@@ -165,6 +180,7 @@ export function RankingBar({
   color?: string;
   reference?: { x: number; label: string };
 }) {
+  const fill = resolveColor(color);
   return (
     <ResponsiveContainer>
       <BarChart data={data} layout="vertical" margin={{ top: 4, right: 24, bottom: 0, left: 0 }}>
@@ -186,7 +202,7 @@ export function RankingBar({
             label={{ value: reference.label, position: "top", fontSize: 10, fill: chartPalette.rose }}
           />
         ) : null}
-        <Bar dataKey={yKey} fill={color === "gradient" ? "url(#barGrad)" : color} radius={[0, 8, 8, 0]} />
+        <Bar dataKey={yKey} fill={fill} radius={[0, 8, 8, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
@@ -659,6 +675,7 @@ export function SimpleBar({
   yKey: string;
   color?: string;
 }) {
+  const fill = resolveColor(color);
   return (
     <ResponsiveContainer>
       <BarChart data={data} margin={{ top: 4, right: 16, bottom: 0, left: -10 }}>
@@ -666,9 +683,9 @@ export function SimpleBar({
         <XAxis dataKey={xKey} tick={axisTick} tickLine={false} axisLine={false} />
         <YAxis tick={axisTick} tickLine={false} axisLine={false} />
         <Tooltip contentStyle={tooltipStyle} />
-        <Bar dataKey={yKey} fill={color} radius={[6, 6, 0, 0]}>
+        <Bar dataKey={yKey} fill={fill} radius={[6, 6, 0, 0]}>
           {data.map((_, i) => (
-            <Cell key={i} fill={color} />
+            <Cell key={i} fill={fill} />
           ))}
         </Bar>
       </BarChart>

@@ -25,23 +25,23 @@ export function HeroSection({
       </div>
       <div className="mx-auto grid max-w-6xl gap-12 px-4 pb-16 pt-12 sm:px-6 md:pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:px-8 lg:pb-24 lg:pt-28">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
-            <span className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-accent">
+          <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 rounded-full border border-accent/30 bg-accent/5 px-5 py-2">
+            <span className="h-2 w-2 animate-pulse-dot rounded-full bg-accent" />
+            <span className="font-mono-ui text-xs uppercase tracking-[0.15em] text-accent font-medium">
               Proyek BI · Kelompok 3 · D4 SIKC 3B
             </span>
           </motion.div>
 
           <motion.h1
             variants={fadeInUp}
-            className="font-display mt-6 text-[2.4rem] leading-[1.05] tracking-tight text-foreground md:text-[3.4rem] lg:text-[4rem]"
+            className="font-display mt-6 text-[2.8rem] leading-[1.05] tracking-tight text-foreground md:text-[3.8rem] lg:text-[4.5rem]"
           >
             Membaca <GradientText withUnderline>Jawa Barat</GradientText>
             <br />
             dari data, bukan dari asumsi.
           </motion.h1>
 
-          <motion.p variants={fadeInUp} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <motion.p variants={fadeInUp} className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             Sistem Business Intelligence end-to-end untuk 27 kabupaten/kota Jawa Barat.
             Dari ETL, data warehouse, K-Means clustering, sampai dashboard stakeholder—
             semua berbasis data terbuka dan siap dipakai untuk pengambilan keputusan.
@@ -65,14 +65,14 @@ export function HeroSection({
           </motion.div>
 
           <motion.div variants={fadeInUp} className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <p className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <p className="font-mono-ui text-xs uppercase tracking-[0.15em] text-muted-foreground font-medium">
               Sumber data
             </p>
-            <span className="text-sm font-medium text-foreground">BPS Jabar</span>
-            <span className="text-sm font-medium text-muted-foreground">·</span>
-            <span className="text-sm font-medium text-foreground">Open Data Jabar</span>
-            <span className="text-sm font-medium text-muted-foreground">·</span>
-            <span className="text-sm font-medium text-foreground">Bank Indonesia</span>
+            <span className="text-base font-medium text-foreground">BPS Jabar</span>
+            <span className="text-base font-medium text-muted-foreground">·</span>
+            <span className="text-base font-medium text-foreground">Open Data Jabar</span>
+            <span className="text-base font-medium text-muted-foreground">·</span>
+            <span className="text-base font-medium text-foreground">Bank Indonesia</span>
           </motion.div>
         </motion.div>
 
@@ -115,45 +115,45 @@ export function HeroSection({
           </div>
 
           {/* Floating cards */}
-          <FloatingCard duration={5} className="absolute left-2 top-10 w-56 rounded-2xl border border-border bg-card p-4 shadow-card-lg">
+          <FloatingCard duration={5} className="absolute left-2 top-10 w-56 rounded-2xl border border-border bg-card p-5 shadow-card-lg">
             <div className="flex items-center justify-between">
-              <p className="font-mono-ui text-[9px] uppercase tracking-[0.2em] text-muted-foreground">TPT 2025</p>
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                <TrendingDown className="h-3 w-3" />
+              <p className="font-mono-ui text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">TPT 2025</p>
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                <TrendingDown className="h-3.5 w-3.5" />
                 turun
               </span>
             </div>
-            <p className="font-display mt-2 text-2xl text-foreground">{avgTpt}</p>
-            <p className="text-[11px] text-muted-foreground">Rata-rata 27 kab/kota</p>
+            <p className="font-display mt-3 text-3xl text-foreground">{avgTpt}</p>
+            <p className="text-sm text-muted-foreground">Rata-rata 27 kab/kota</p>
             <div className="mt-3 flex items-end gap-1">
               {[18, 24, 21, 28, 22, 19, 16].map((h, i) => (
-                <span key={i} className="w-1.5 rounded-sm bg-accent/30" style={{ height: h }} />
+                <span key={i} className="w-2 rounded-sm bg-accent/30" style={{ height: h }} />
               ))}
             </div>
           </FloatingCard>
 
-          <FloatingCard duration={4} delay={0.8} className="absolute left-1/2 top-44 w-60 -translate-x-1/2 rounded-2xl bg-foreground p-4 text-background shadow-card-xl">
+          <FloatingCard duration={4} delay={0.8} className="absolute left-1/2 top-44 w-64 -translate-x-1/2 rounded-2xl bg-foreground p-5 text-background shadow-card-xl">
             <div className="flex items-center justify-between">
-              <p className="font-mono-ui text-[9px] uppercase tracking-[0.2em] text-white/60">Prioritas #1</p>
-              <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
+              <p className="font-mono-ui text-[10px] uppercase tracking-[0.15em] text-white/60 font-medium">Prioritas #1</p>
+              <span className="h-2 w-2 animate-pulse-dot rounded-full bg-accent" />
             </div>
-            <p className="font-display mt-2 text-xl text-white">{topPriorityName}</p>
-            <p className="text-[11px] text-white/70">Skor prioritas: {topPriorityScore}</p>
-            <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-white/10">
+            <p className="font-display mt-3 text-2xl text-white">{topPriorityName}</p>
+            <p className="text-sm text-white/70">Skor prioritas: {topPriorityScore}</p>
+            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
               <div className="h-full w-4/5 gradient-bg" />
             </div>
           </FloatingCard>
 
-          <FloatingCard duration={6} delay={1.4} className="absolute bottom-6 left-12 w-52 rounded-2xl border border-border bg-card p-4 shadow-card-lg">
+          <FloatingCard duration={6} delay={1.4} className="absolute bottom-6 left-12 w-56 rounded-2xl border border-border bg-card p-5 shadow-card-lg">
             <div className="flex items-center justify-between">
-              <p className="font-mono-ui text-[9px] uppercase tracking-[0.2em] text-muted-foreground">Kemiskinan</p>
-              <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2 py-0.5 text-[10px] font-medium text-rose-700">
-                <TrendingUp className="h-3 w-3" />
+              <p className="font-mono-ui text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">Kemiskinan</p>
+              <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2.5 py-1 text-xs font-medium text-rose-700">
+                <TrendingUp className="h-3.5 w-3.5" />
                 fokus
               </span>
             </div>
-            <p className="font-display mt-2 text-2xl text-foreground">{avgMiskin}</p>
-            <p className="text-[11px] text-muted-foreground">Rata-rata provinsi</p>
+            <p className="font-display mt-3 text-3xl text-foreground">{avgMiskin}</p>
+            <p className="text-sm text-muted-foreground">Rata-rata provinsi</p>
           </FloatingCard>
         </motion.div>
       </div>

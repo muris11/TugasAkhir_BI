@@ -1,39 +1,39 @@
 import { AppShell } from "@/components/app-shell";
 import {
-  ChartFrame,
-  CorrelationMatrix,
-  InflationHeatmap,
-  RankingBar,
-  ScatterBubble,
-  SimpleBar,
+    ChartFrame,
+    CorrelationMatrix,
+    InflationHeatmap,
+    RankingBar,
+    ScatterBubble,
+    SimpleBar,
 } from "@/components/charts/index";
-import { chartPalette } from "@/components/charts/palette";
 import { InsightBox } from "@/components/ui/insight-box";
 import { SectionLabel } from "@/components/ui/section-label";
 import {
-  getCorrelationMatrix,
-  getInflasiPeakAnalysis,
-  getKotaVsKabupaten,
-  getMiskinIpgAnalysis,
-  getTopPriority,
-  getTptRanking,
+    getCorrelationMatrix,
+    getInflasiPeakAnalysis,
+    getKotaVsKabupaten,
+    getMiskinIpgAnalysis,
+    getTopPriority,
+    getTptRanking,
 } from "@/lib/dashboard-metrics";
-import { getDashboardData, getInflasiRingkas, type InflasiRow } from "@/lib/data";
+import { getDashboardData, type InflasiRow } from "@/lib/data";
 import { formatAngka, formatPersen } from "@/lib/format";
 import {
-  HelpCircle,
-  TrendingDown,
-  TrendingUp,
-  AlertTriangle,
-  MapPin,
-  BarChart3,
-  Building2,
-  Trees,
+    AlertTriangle,
+    BarChart3,
+    Building2,
+    MapPin,
+    Trees,
+    TrendingDown,
+    TrendingUp
 } from "lucide-react";
 
 export default async function AnalisisPage() {
   const data = await getDashboardData();
-  const tahun = 2025;
+  // Use 2025 if real data exists (tpt != null and > 0), else fall back to 2024
+  const has2025 = data.kinerja.some((r) => r.tahun === 2025 && r.tpt !== null && r.tpt > 0);
+  const tahun = has2025 ? 2025 : 2024;
 
   // Q1: TPT Ranking
   const tptAnalysis = getTptRanking(data.kinerja, tahun, 5);
@@ -113,12 +113,12 @@ export default async function AnalisisPage() {
           Kabupaten/kota mana yang memiliki tingkat pengangguran tertinggi dan terendah?
         </h2>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-          Periode analisis: 2021-2025. Focus pada data terbaru (2025) dengan perbandingan terhadap rata-rata provinsi.
+          Periode analisis: 2021-2025. Focus pada data terbaru ({tahun}) dengan perbandingan terhadap rata-rata provinsi.
         </p>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
           <ChartFrame
-            title="5 Wilayah TPT Tertinggi (2025)"
+            title={`5 Wilayah TPT Tertinggi (${tahun})`}
             prompt="Dimana pusat pengangguran terkonsentrasi?"
             description="Persentase tenaga kerja menganggur."
             badge="Ranking · TPT Tinggi"
@@ -134,7 +134,7 @@ export default async function AnalisisPage() {
           </ChartFrame>
 
           <ChartFrame
-            title="5 Wilayah TPT Terendah (2025)"
+            title={`5 Wilayah TPT Terendah (${tahun})`}
             prompt="Wilayah mana yang paling berhasil menyerap tenaga kerja?"
             description="Persentase tenaga kerja menganggur terendah."
             badge="Ranking · TPT Rendah"
@@ -174,7 +174,7 @@ export default async function AnalisisPage() {
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <ChartFrame
-              title="Kemiskinan vs IPG (2025)"
+              title={`Kemiskinan vs IPG (${tahun})`}
               prompt="Di manakah kemiskinan dan ketimpangan gender berkumpul?"
               description="Bubble di atas garis horizontal = IPG di atas rata-rata. Di kanan garis vertikal = kemiskinan di atas rata-rata."
               badge="Scatter · Quadrant Analysis"
