@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   title: "BI Jabar — Dashboard Sosial-Ekonomi Jawa Barat",
   description:
     "Sistem Business Intelligence end-to-end Jawa Barat: ETL, data warehouse, K-Means clustering, dan dashboard stakeholder berbasis data terbuka.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
